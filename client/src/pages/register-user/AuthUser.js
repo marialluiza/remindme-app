@@ -18,30 +18,30 @@ import { KeyRound } from 'lucide-react';
   }
   ```
 */
-export default function Example() {
-    const [nome, setNome] = useState('');
+export default function AuthUser() {
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
+    const [password, setPassword] = useState('');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         try {
-            const cadastrarUsuario = await fetch('http://localhost:8080/salvar', {
+            const userRegister = await fetch('http://localhost:8080/salvar', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ nome, email, senha }),
+                body: JSON.stringify({ name, email, password }),
             });
 
-            if (cadastrarUsuario.ok) {
+            if (userRegister.ok) {
                 alert('Usuário cadastrado com sucesso!');
                 //toast.success('Usuário cadastrado com sucesso!')
                 // Limpar os campos do formulário após o cadastro
-                setNome('');
+                setName('');
                 setEmail('');
-                setSenha('');
+                setPassword('');
                 
             } else {
                 alert('Ocorreu um erro ao cadastrar o usuário.');
@@ -92,22 +92,22 @@ export default function Example() {
 
                     <form onSubmit={handleSubmit} className="space-y-6" action="#" method="POST ">
                         <div>
-                            {/* <label htmlFor="nome" className="block text-sm font-medium leading-6 text-gray-900">
-                                Nome
+                            {/* <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
+                                name
                             </label> */}
                             <div>
                                 <div className="absolute pointer-events-none z-10  pl-2 pt-2">
                                     <UserRound className="h-5 w-5 text-gray-400 " />
                                 </div>
                                 <input
-                                    id="nome"
-                                    name="nome"
-                                    value={nome}
-                                    onChange={(e) => setNome(e.target.value)}
+                                    id="name"
+                                    name="name"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
                                     type="text"
-                                    autoComplete="nome"
+                                    autoComplete="name"
                                     required
-                                    placeholder="Digite seu nome"
+                                    placeholder="Digite seu name"
                                     className="relative block w-full rounded-md border-0 py-1.5 px-9 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-yellow-300 sm:text-sm sm:leading-6 outline-none"
                                 /> 
                             </div>
@@ -139,11 +139,11 @@ export default function Example() {
                         <div>
                             {/* <div className="flex items-center justify-between">
                                 <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
-                                    Senha
+                                    password
                                 </label> 
                                 <div className="text-sm">
                                     <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                                        Esqueceu a senha?
+                                        Esqueceu a password?
                                     </a>
                                 </div>
                             </div> */}
@@ -155,12 +155,12 @@ export default function Example() {
                                 <input
                                     id="password"
                                     name="password"
-                                    value={senha}
-                                    onChange={(e) => setSenha(e.target.value)}
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
                                     type="password"
                                     autoComplete="current-password"
                                     required
-                                    placeholder="Digite sua senha"
+                                    placeholder="Digite sua password"
                                     className="relative block w-full rounded-md border-0 py-1.5 px-9 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-yellow-300 sm:text-sm sm:leading-6 outline-none"
                                 />
                             </div>
@@ -169,11 +169,11 @@ export default function Example() {
                         {/* <div>
                             <div className="flex items-center justify-between">
                                 <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
-                                    Digite sua senha novamente
+                                    Digite sua password novamente
                                 </label>
                                     <div className="text-sm">
                                     <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                                        Esqueceu a senha?
+                                        Esqueceu a password?
                                     </a>
                                 </div> 
                             </div>
