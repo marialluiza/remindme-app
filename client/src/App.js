@@ -1,23 +1,25 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import './App.css';
-import CadastroUsuario from './pages/cadastro-usuario/CadastroUsuario';
-import LoginUsuario from './pages/login-usuario/LoginUsuario';
-import Container from './pages/Layout';
+import Home from './pages/home/Home';
+import RegisterUser from './pages/register-user/index';
 
 function App() {
-
   return (
-    <Router>
-      <Container>
+    <div className="App">
+      <Router>
+        <header>
+          <nav>
+            <Link to="/">Cadastre-se</Link>
+            <Link to="/home">Home</Link>
+          </nav>
+        </header>
         <Routes>
-          <Route path="/" element={<CadastroUsuario />} />
+          <Route path="/" element={<RegisterUser />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
-        <Routes>
-          <Route path="/login" element={<LoginUsuario />} />
-        </Routes>
-      </Container>
-    </Router>
+      </Router>
+    </div >
   );
 }
 
