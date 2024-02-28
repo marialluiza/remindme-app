@@ -18,11 +18,11 @@ public class Pessoa {
     @Column(name = "id_pessoa")
     private long idPessoa; //'long' não permite valor nulo - 'Long' permite
 
-    private String nome;
+    private String name;
 
     private String email;
 
-    private String senha;
+    private String password;
 
 }
 
