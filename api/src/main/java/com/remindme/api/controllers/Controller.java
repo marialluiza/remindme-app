@@ -20,7 +20,7 @@ import com.remindme.api.repositories.PessoaRepository;
 @RestController
 @CrossOrigin(origins = "*")
 public class Controller {
-    
+
     @Autowired
     private PessoaRepository pessoaRepository;
 
@@ -30,6 +30,7 @@ public class Controller {
     }
 
     @GetMapping("/listar/{id}")
+
     public Pessoa listarPorId(@PathVariable long id) {
         return pessoaRepository.findById(id);
     }
@@ -51,6 +52,6 @@ public class Controller {
     public void remover(@PathVariable long id) {
         Pessoa pessoaRemove = pessoaRepository.findById(id);
         pessoaRepository.delete(pessoaRemove);
-    }    
+    }
 
 }

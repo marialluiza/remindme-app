@@ -8,7 +8,6 @@ import RegisterUser from './pages/register-user/index';
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
 
 function App() {
-
   return (
     <div className="App">
       <Router>
