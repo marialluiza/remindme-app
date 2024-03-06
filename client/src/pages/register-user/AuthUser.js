@@ -73,7 +73,7 @@ export default function Example() {
                     <img 
                         className=""
                         src={process.env.PUBLIC_URL + '/name-logo.png'} alt="Remind Me"
-                        />
+                    />
                         
                     <p className="mt-48 text-sm"> Terms of Use | Browser and Display Compatibility </p>
                     <p className="text-sm"> Copyright © 2023 remind.com.br </p>
@@ -109,7 +109,7 @@ export default function Example() {
                                     autoComplete="name"
                                     required
                                     placeholder="Digite seu nome"
-                                    className="relative block w-full rounded-md border-0 py-1.5 px-9 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-yellow-300 sm:text-sm sm:leading-6 outline-none"
+                                    className="relative block w-full rounded-md border-0 py-1.5 px-9 text-gray-900 ring-1 ring-inset ring-purple-300 placeholder:text-gray-400 focus:ring-yellow-300 sm:text-sm sm:leading-6 outline-none"
                                 /> 
                             </div>
                         </div>
@@ -132,7 +132,7 @@ export default function Example() {
                                     autoComplete="email"
                                     required
                                     placeholder="Digite seu email"
-                                    className="relative block w-full rounded-md border-0 py-1.5 px-9 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-yellow-300 sm:text-sm sm:leading-6 outline-none"
+                                    className="relative block w-full rounded-md border-0 py-1.5 px-9 text-gray-900 ring-1 ring-inset ring-purple-300 placeholder:text-gray-400 focus:ring-yellow-300 sm:text-sm sm:leading-6 outline-none"
                                 />
                             </div>
                         </div>
@@ -161,8 +161,8 @@ export default function Example() {
                                     type="password"
                                     autoComplete="current-password"
                                     required
-                                    placeholder="Digite sua password"
-                                    className="relative block w-full rounded-md border-0 py-1.5 px-9 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-yellow-300 sm:text-sm sm:leading-6 outline-none"
+                                    placeholder="Digite sua senha"
+                                    className="relative block w-full rounded-md border-0 py-1.5 px-9 text-gray-900 ring-1 ring-inset ring-purple-300 placeholder:text-gray-400 focus:ring-yellow-300 sm:text-sm sm:leading-6 outline-none"
                                 />
                             </div>
                         </div>
