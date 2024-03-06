@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -52,6 +53,22 @@ public class Controller {
     public void remover(@PathVariable long id) {
         Pessoa pessoaRemove = pessoaRepository.findById(id);
         pessoaRepository.delete(pessoaRemove);
+    }
+
+    @PostMapping("/login")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<Pessoa> logar(@RequestBody Pessoa pessoaInput) {
+        Pessoa pessoaEncontrada = pessoaRepository.findByEmail(pessoaInput.getEmail());
+
+        if (pessoaEncontrada == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        if (!pessoaEncontrada.getPassword().equals(pessoaInput.getPassword())) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+
+        return ResponseEntity.ok(pessoaEncontrada);
     }
 
 }
