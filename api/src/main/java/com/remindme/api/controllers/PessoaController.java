@@ -20,7 +20,7 @@ import com.remindme.api.repositories.PessoaRepository;
 
 @RestController
 @CrossOrigin(origins = "*")
-public class Controller {
+public class PessoaController {
 
     @Autowired
     private PessoaRepository pessoaRepository;
