@@ -1,6 +1,7 @@
 package com.remindme.api.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,63 +13,53 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.remindme.api.models.Pessoa;
 import com.remindme.api.repositories.PessoaRepository;
+import com.remindme.api.services.PessoaService;
 
 @RestController
 @CrossOrigin(origins = "*")
+@RequestMapping("/pessoas")
 public class PessoaController {
 
     @Autowired
     private PessoaRepository pessoaRepository;
 
+    @Autowired
+    private PessoaService pessoaService;
+
+    @PostMapping("/cadastrar")
+    public ResponseEntity<Pessoa> cadastrarPessoa(@RequestBody Pessoa pessoa) {
+        Pessoa novaPessoa = pessoaService.cadastrarPessoa(pessoa);
+        return new ResponseEntity<>(novaPessoa, HttpStatus.CREATED);
+    }
+
     @GetMapping("/listar")
-    public List<Pessoa> listar() {
-        return pessoaRepository.findAll();
+    public ResponseEntity<List<Pessoa>> listarPessoas() {
+        List<Pessoa> pessoas = pessoaService.listarPessoas();
+        return new ResponseEntity<>(pessoas, HttpStatus.OK);
     }
 
     @GetMapping("/listar/{id}")
-
-    public Pessoa listarPorId(@PathVariable long id) {
-        return pessoaRepository.findById(id);
+    public ResponseEntity<Pessoa> listarPessoaPorId(@PathVariable Long id) {
+        Optional<Pessoa> pessoa = pessoaService.listarPessoaPorId(id);
+        return pessoa.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @PostMapping("/salvar")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Pessoa cadastrar(@RequestBody Pessoa pessoaInput) {
-        return pessoaRepository.save(pessoaInput);
-    }
-
-    @PutMapping("/atualizar")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public Pessoa editarPessoa(@RequestBody Pessoa pessoaInput) {
-        return pessoaRepository.save(pessoaInput);
+    @PutMapping("/atualizar/{id}")
+    public ResponseEntity<Pessoa> atualizarPessoa(@PathVariable Long id, @RequestBody Pessoa pessoaInput) {
+        Pessoa pessoaAtualizada = pessoaService.atualizarPessoa(id, pessoaInput);
+        return new ResponseEntity<>(pessoaAtualizada, HttpStatus.OK);
     }
 
     @DeleteMapping("/remover/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void remover(@PathVariable long id) {
-        Pessoa pessoaRemove = pessoaRepository.findById(id);
-        pessoaRepository.delete(pessoaRemove);
+    public ResponseEntity<Void> removerPessoa(@PathVariable Long id) {
+        pessoaService.removerPessoa(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-
-    @PostMapping("/login")
-    @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Pessoa> logar(@RequestBody Pessoa pessoaInput) {
-        Pessoa pessoaEncontrada = pessoaRepository.findByEmail(pessoaInput.getEmail());
-
-        if (pessoaEncontrada == null) {
-            return ResponseEntity.notFound().build();
-        }
-
-        if (!pessoaEncontrada.getPassword().equals(pessoaInput.getPassword())) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-        }
-
-        return ResponseEntity.ok(pessoaEncontrada);
-    }
-
 }
