@@ -11,5 +11,4 @@ public class ApiApplication {
 
 		System.out.println("Tá funfando");
 	}
-
 }

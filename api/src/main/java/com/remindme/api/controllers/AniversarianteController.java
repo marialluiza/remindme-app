@@ -30,7 +30,6 @@ public class AniversarianteController {
         Aniversariante novoAniversariante = aniversarianteService.cadastrarAniversariante(aniversariante);
         return new ResponseEntity<>(novoAniversariante, HttpStatus.CREATED);
     }
-    
 
     @GetMapping("/listar")
     public ResponseEntity<List<Aniversariante>> listarAniversariantes() {
@@ -62,5 +61,4 @@ public class AniversarianteController {
         aniversarianteService.removerAniversariante(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-
 }
