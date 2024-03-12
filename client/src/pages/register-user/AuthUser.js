@@ -3,22 +3,8 @@ import { UserRound } from 'lucide-react';
 import { Mail } from 'lucide-react';
 import { KeyRound } from 'lucide-react';
 import { Link } from 'react-router-dom';
-//import { toast } from 'sonner'; 
+import { toast } from 'sonner';
 
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 export default function Example() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -37,19 +23,21 @@ export default function Example() {
             });
 
             if (cadastrarUsuario.ok) {
-                alert('Usuário cadastrado com sucesso!');
-                //toast.success('Usuário cadastrado com sucesso!')
+                //alert('Usuário cadastrado com sucesso!');
+                toast.success('Usuário cadastrado com sucesso!')
                 // Limpar os campos do formulário após o cadastro
                 setName('');
                 setEmail('');
                 setPassword('');
                 
             } else {
-                alert('Ocorreu um erro ao cadastrar o usuário.');
+                toast.error('Ocorreu um erro ao cadastrar o usuário.')
+                //alert('Ocorreu um erro ao cadastrar o usuário.');
             }
         } catch (error) {
             console.error('Erro ao enviar requisição:', error);
-            alert('Ocorreu um erro ao cadastrar o usuário.');
+            //alert('Ocorreu um erro ao cadastrar o usuário.');
+            toast.error('Ocorreu um erro ao cadastrar o usuário.')
         }
     };
 
@@ -67,7 +55,7 @@ export default function Example() {
 
                 <div className="bg-purple-300 flex flex-col text-center px-6 h-[100vh] w-[90vh]">
                     <p className="text-slate-800 mt-48 text-sm"> 
-                        NUNCA DEIXE O CARINHO PASSAR DESAPERCEBIDO COM
+                        NÃO DEIXE O CARINHO PASSAR DESAPERCEBIDO COM
                     </p>
 
                     <img 

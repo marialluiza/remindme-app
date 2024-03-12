@@ -1,5 +1,6 @@
 import { Mail } from 'lucide-react';
 import { KeyRound } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function UserLogin() {
 
@@ -34,7 +35,7 @@ export default function UserLogin() {
 
                     <div className="absolute pointer-events-none z-10  pl-2 pt-6">
                         <KeyRound className="h-5 w-5 text-gray-400 " />
-                    </div>  
+                    </div>
                     <div className="mt-4  w-full">
                         <input
                             // id="password"
@@ -49,6 +50,14 @@ export default function UserLogin() {
                         />
                     </div>
 
+                    <p className="w-max mt-4 text-center text-sm text-gray-500">
+                        Ainda não é cadastrado?{' '}
+                        <Link to="/" className="font-semibold text-sm leading-6 text-purple-600 hover:text-purple-500">
+                            Cadastre-se
+                        </Link>
+                    </p>
+
+
                     <div>
                         <button
                             type="submit"
@@ -56,12 +65,10 @@ export default function UserLogin() {
                         >
                             Login
                         </button>
+
                     </div>
                 </form>
             </div>
-
-
-
         </div>
     )
 }
