@@ -9,4 +9,6 @@ public interface PessoaRepositoryCustom {
     List<Pessoa> findAll();
 
     Pessoa findById(long id);
+
+    Pessoa findByEmail(String email);
 }
