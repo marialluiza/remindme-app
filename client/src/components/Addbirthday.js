@@ -12,7 +12,7 @@ export default function Addbirthday() {
 
     return (
         <Dialog.Root>
-            <div className="flex pt-56 justify-center"> {/* quando clica em um elemnto 'Trigger' ele abre o elemento 'content' */}
+            <div className="flex top-56 p-6 justify-center"> {/* quando clica em um elemnto 'Trigger' ele abre o elemento 'content' */}
                 <Dialog.Trigger
                     className="flex justify-center rounded-[10px] bg-white px-3 py-1.5 font-semibold text-sm leading-6 ring-1 ring-purple-400 text-slate-700 shadow-sm  hover:bg-purple-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
                 >

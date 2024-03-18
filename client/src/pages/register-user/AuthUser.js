@@ -14,7 +14,7 @@ export default function Example() {
         event.preventDefault();
 
         try {
-            const cadastrarUsuario = await fetch('http://localhost:8080/salvar', {
+            const cadastrarUsuario = await fetch('http://localhost:8080/pessoas/cadastrar', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
