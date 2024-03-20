@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function BotaoSidebar({ children, className, href }) {
+export default function ButtonSidebar({ children, className, href }) {
     if (href) {
         return (
             <a

@@ -27,10 +27,10 @@ export default function Addbirthday() {
 
                         <div className="flex flex-col justify-center items-center">
                             <Addimage />
-                            <Button className={"flex justify-center items-center bg-purple-300 w-24 h-6 text-[11px] mt-2"
+                            {/* <Button className={"flex justify-center items-center bg-purple-300 w-24 h-6 text-[11px] mt-2"
                             }
                             >Adicionar⠀foto
-                            </Button>
+                            </Button> */}
                         </div>
 
                         <p className="mt-2">Nome:</p>

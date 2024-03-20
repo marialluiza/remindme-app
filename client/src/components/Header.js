@@ -31,7 +31,8 @@ export default function Header({ user }) {
                 <div className="flex justify-center items-center">
                     <h3 className="text-slate-200 font-semibold text-sm">Olá, {user.name}</h3>
                     <div className="flex px-6">
-                        <CircleUserRound className="h-8 w-8 text-slate-200 cursor-pointer" />
+                        {/* <CircleUserRound className="h-8 w-8 text-slate-200 cursor-pointer" /> */}
+                        <img src={user.profileImageURL} alt="User Profile" className="h-8 w-8 rounded-full cursor-pointer" />
                     </div>
                 </div>
 

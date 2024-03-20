@@ -24,10 +24,10 @@ export default function UserProfile() {
 
                         <div className="flex flex-col justify-center items-center px-12">
                             <Addimage />
-                            <Button className={"flex justify-center items-center bg-purple-300 w-24 h-6 text-[11px] mt-1"
+                            {/* <Button className={"flex justify-center items-center bg-purple-300 w-24 h-6 text-[11px] mt-1"
                             }
                             >Adicionar⠀foto
-                            </Button>
+                            </Button> */}
                         </div>
                     </div>
 
@@ -46,7 +46,7 @@ export default function UserProfile() {
                         </div>
 
                         <div className="flex justify-end">
-                            <Button className={"bg-purple-300 w-[310px] h-8 text-sm "}>Salvar alterações</Button>
+                            <Button className={"bg-purple-300 w-[310px] h-8 text-sm"}>Salvar alterações</Button>
                         </div>
                     </div>
                 </div>

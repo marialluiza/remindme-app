@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Home, CircleUserRound, Cake, BadgeHelp, LogOut } from 'lucide-react';
-import BotaoSidebar from './BotaoSidebar';
+import ButtonSidebar from './ButtonSidebar';
 
 export default function Sidebarcomp() {
 
@@ -31,30 +31,30 @@ export default function Sidebarcomp() {
                         <div className="absolute flex mt-5 px-4">
                             <Home className="h-6 w-6 text-slate-200 cursor-pointer z-10" />
                         </div>
-                        <BotaoSidebar href={"/home"}>Página inicial</BotaoSidebar>
+                        <ButtonSidebar href={"/home"}>Página inicial</ButtonSidebar>
                         
                         <div className="absolute flex mt-5 px-4">
                             <Cake className="h-6 w-6 text-slate-200 cursor-pointer z-10" />
                         </div>
-                        <BotaoSidebar href={"/birthdays"}>Aniversariantes</BotaoSidebar>
+                        <ButtonSidebar href={"/birthdays"}>Aniversariantes</ButtonSidebar>
 
                         <div className="absolute flex mt-5 px-4">
                             <CircleUserRound className="h-6 w-6 text-slate-200 cursor-pointer z-10" />
                         </div>
-                        <BotaoSidebar href={"/user-profile"}>Perfil</BotaoSidebar>
+                        <ButtonSidebar href={"/user-profile"}>Perfil</ButtonSidebar>
 
 
                         <div className="absolute flex mt-5 px-4">
                             <BadgeHelp className="h-6 w-6 text-slate-200 cursor-pointer z-10" />
                         </div>
-                        <BotaoSidebar  href={"/help"}>Ajuda</BotaoSidebar>
+                        <ButtonSidebar  href={"/help"}>Ajuda</ButtonSidebar>
 
                         <div className="h-px bg-slate-500 mt-24" />
 
                         <div className="absolute flex mt-5 px-4">
                             <LogOut className="h-6 w-6 text-slate-200 cursor-pointer z-10" />
                         </div>
-                        <BotaoSidebar>Sair</BotaoSidebar>
+                        <ButtonSidebar>Sair</ButtonSidebar>
 
 
                     </div>

@@ -1,5 +1,7 @@
 import { Search } from 'lucide-react';
 import Header from '../../components/Header';
+import TableBirthdays from '../../components/TableBirthdays';
+import Paginacao from '../../components/Paginacao';
 
 export default function Birthdays() {
 
@@ -24,12 +26,7 @@ export default function Birthdays() {
                     />
                 </div>
 
-                <div className="flex w-full h-full justify-center items-center">
-                    <div className="w-full h-[75vh] bg-slate-500">
-                        
-
-                    </div>
-                </div>
+                <TableBirthdays />
             </div>
         </>
     )

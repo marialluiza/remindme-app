@@ -23,7 +23,7 @@ export default function TableBirthdays() {
 
                             </th>
                             <th scope="col" className="text-sm font-semibold text-purple-900 py-4 text-left">
-                                {/* Nome */}
+                                Nome
                             </th>
                             <th scope="col" className="text-sm font-semibold text-purple-900 px-6 py-4 text-right">
                                 Data de nascimento
