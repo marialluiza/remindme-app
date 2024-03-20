@@ -12,7 +12,7 @@ export default function Addbirthday() {
 
     return (
         <Dialog.Root>
-            <div className="flex pt-56 justify-center"> {/* quando clica em um elemnto 'Trigger' ele abre o elemento 'content' */}
+            <div className="flex top-56 p-6 justify-center"> {/* quando clica em um elemnto 'Trigger' ele abre o elemento 'content' */}
                 <Dialog.Trigger
                     className="flex justify-center rounded-[10px] bg-white px-3 py-1.5 font-semibold text-sm leading-6 ring-1 ring-purple-400 text-slate-700 shadow-sm  hover:bg-purple-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
                 >
@@ -27,10 +27,10 @@ export default function Addbirthday() {
 
                         <div className="flex flex-col justify-center items-center">
                             <Addimage />
-                            <Button className={"flex justify-center items-center bg-purple-300 w-24 h-6 text-[11px] mt-2"
+                            {/* <Button className={"flex justify-center items-center bg-purple-300 w-24 h-6 text-[11px] mt-2"
                             }
                             >Adicionar⠀foto
-                            </Button>
+                            </Button> */}
                         </div>
 
                         <p className="mt-2">Nome:</p>
