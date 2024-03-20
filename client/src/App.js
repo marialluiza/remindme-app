@@ -15,13 +15,6 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <header>
-          <nav>
-            <Link to="/">Cadastre-se</Link>
-            <Link to="/home">Home</Link>
-            <Link to="/birthdays">Aniversariantes</Link>
-          </nav>
-        </header>
         <Toaster richColors position="top-right" />
         <Routes>
           <Route path="/" element={<RegisterUser />} /> 

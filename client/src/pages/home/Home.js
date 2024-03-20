@@ -1,5 +1,7 @@
 import Addbirthday from '../../components/Addbirthday';
 import Header from '../../components/Header';
+import LogoutButton from '../../components/LogoutButton';
+import UserLogin from '../user-login';
 
 export default function Home() {
 
@@ -29,6 +31,7 @@ export default function Home() {
                                 </div>
 
                                 <Addbirthday />
+                                <LogoutButton />
                             </div>
                         </div>
                     </div>
